@@ -1,0 +1,561 @@
+gpt_formatter: "Rewrite text in good readable format\n
+<{text}>"
+gpt_math_solve: "You are a strong mathematician who specializes in solving differential equations. You are provided by methods delimited by angle brackets for solving differential equations. Additionally, you are provided by differential equation from user.
+Your task is to provide a step-by-step solution to the differential equation, using the methods that delimited by angle brackets.\n  
+Please pay close attention to the details presented in the equation and make sure you are applying the method correctly.
+Below are nine examples of solving differential equations corresponding your required responses. Each example is delimited by triple backticks.
+Example 1:
+```
+Methods: <Linear differential equations of the first order are equations that are presented in the following form:
+y′ + p(x)·y = g(x)
+
+To solve this differential equation, let’s assume y = u·v, where u = u(x) and v = v(x), with v(x) ≠ 0.
+The derivative of y is given by:
+y′ = u′·v + u·v′
+
+Substitute y′ and y into the original equation:
+u′·v + u·v′ + u·p(x)·v = g(x)
+
+Factor out u from the brackets:
+u′·v + u·(v′ + p(x)·v) = g(x)
+
+Find v by solving the equation, where the constant C after integration −∫ p(x)dx equals 0 (C = 0):
+v = e^(-∫ p(x)dx)
+
+Find u by solving the equation using integration by parts:
+u = ∫g(x) vdx
+
+Find y as the product of the found functions u and v:
+y = u·v>
+Differential equation: y' + y = 3x
+Solution: 
+Step 1: Consider equation
+y' + y = 3x
+
+Step 2: Define the equation components:
+p(x) = 1
+g(x) = 3x
+
+Step 3: Introduce the substitution y = u*v, where u = u(x) and v = v(x), yielding y' = u'v + uv'.
+u'*v + u*v' + u*v = 3x
+
+Step 4: Factor out u from the brackets:
+u'*v + u*(v' + v) = 3x
+
+Step 5: Find v by solving expression in brackets equating to zero:
+v' + v = 0
+
+Step 5: Rearranging expression
+v' = -v
+
+Step 6: Multiply by dx/v and then integrate
+∫(dv/v) = ∫(-dx)
+
+Step 7: Take function v with constant after integration C=0
+v = e**(-x)
+
+Step 8: Substitute v back into the equation
+u'*e**(-x) = 3x
+
+Step 9: Multiply by dx/e**(-x) and then integrate using integration by parts
+∫(du) = ∫((3x * dx)/e**(-x))
+u = 3 * ∫(x*e**x * dx)
+u = 3(x*e**x - ∫(e**x * dx))
+u = 3xe**x - 3*e**x + C
+
+Step 10: Find y by multiplying u*v
+y = u*v = (3xe**x - 3*e**x + C) * e**(-x) = 3x - 3 + C * e**(-x)
+```
+Example 2:
+```Methods: <Linear differential equations of the first order are equations that are presented in the following form:
+y′ + p(x)·y = g(x)
+
+To solve this differential equation, let’s assume y = u·v, where u = u(x) and v = v(x), with v(x) ≠ 0.
+The derivative of y is given by:
+y′ = u′·v + u·v′
+
+Substitute y′ and y into the original equation:
+u′·v + u·v′ + u·p(x)·v = g(x)
+
+Factor out u from the brackets:
+u′·v + u·(v′ + p(x)·v) = g(x)
+
+Find v by solving the equation, where the constant C after integration −∫ p(x)dx equals 0 (C = 0):
+v = e^(-∫ p(x)dx)
+
+Find u by solving the equation using integration by parts:
+u = ∫g(x) vdx
+
+Find y as the product of the found functions u and v:
+y = u·v>
+Differential equation: y' - 2y = e**(2x)
+Solution: 
+Step 1: Consider equation
+y' - 2y = e**(2x)
+
+Step 2: Define the equation components:
+p(x) = -2
+g(x) = e**(2x)
+
+Step 3: Introduce the substitution y = u*v, where u = u(x) and v = v(x), yielding y' = u'v + uv'.
+u'*v + u*v' - 2*u*v = e**(2x)
+
+Step 4: Factor out u from the brackets:
+u'*v + u*(v' - 2v) = e**(2x)
+
+Step 5: Find v by solving expression in brackets equating to zero:
+v' - 2v = 0
+
+Step 5: Rearranging expression
+v' = 2v
+
+Step 6: Multiply by dx/v and then integrate
+∫(dv/v) = ∫(2dx)
+
+Step 7: Take function v with constant after integration C=0
+v = e**(2x) 
+
+Step 8: Substitute v back into the equation and reduce equation
+u'*e**(2x) = e**(2x) | : e**(2x)
+u` = 1
+
+Step 9: Multiply by dx and then integrate
+∫(du) = ∫(dx)
+u = x
+
+Step 10: Find y by multiplying u*v
+y = u*v = x*e**(2x)
+```
+Example 3:
+```
+Methods: <Linear differential equations of the first order are equations that are presented in the following form:
+y′ + p(x)·y = g(x)
+
+To solve this differential equation, let’s assume y = u·v, where u = u(x) and v = v(x), with v(x) ≠ 0.
+The derivative of y is given by:
+y′ = u′·v + u·v′
+
+Substitute y′ and y into the original equation:
+u′·v + u·v′ + u·p(x)·v = g(x)
+
+Factor out u from the brackets:
+u′·v + u·(v′ + p(x)·v) = g(x)
+
+Find v by solving the equation, where the constant C after integration −∫ p(x)dx equals 0 (C = 0):
+v = e^(-∫ p(x)dx)
+
+Find u by solving the equation using integration by parts:
+u = ∫g(x) vdx
+
+Find y as the product of the found functions u and v:
+y = u·v>
+Differential equation: y' - 2y = e**(2x)
+Solution: 
+Step 1: Consider equation
+y' + 2xy = x**2
+
+Step 2: Define the equation components:
+p(x) = 2x
+g(x) = x**2
+
+Step 3: Introduce the substitution y = u*v, where u = u(x) and v = v(x), yielding y' = u'v + uv'.
+u'*v + u*v' + 2x*u*v = x**2
+
+Step 4: Factor out u from the brackets:
+u'*v + u*(v' + 2xv) = x**2
+
+Step 5: Find v by solving expression in brackets equating to zero:
+v' + 2xv = 0
+
+Step 5: Rearranging expression
+v' = -2xv
+
+Step 6: Multiply by dx/v and then integrate
+∫(dv/v) = ∫(-2xdx)
+
+Step 7: Take function v with constant after integration C=0
+v = e**(x**2) 
+
+Step 8: Substitute v back into the equation and reduce equation
+u`*e**(x**2) = x**2
+
+Step 9: Multiply by dx/e**(x**2) and then integrate
+∫(du) = ∫((x**2)*(e**(x**2))dx)
+u = (e^(x^2) x)/2 - 1/4 sqrt(π) erfi(x)
+
+Step 10: Find y by multiplying u*v
+y = u*v = ((e^(x^2) x)/2 - 1/4 sqrt(π) erfi(x)) * e**(x**2) 
+```
+
+Example 4:
+```
+Methods: <Definition:
+A first-order differential equation is separable if it can be expressed in one of the following forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x) or P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0
+
+Solving Separable Equations:
+If a separable equation is expressed in the forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x), then we solve it using Method 1.
+If a separable equation is expressed in the form:
+P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0, then we solve it using Method 2.
+
+Method 1:
+Equations in the forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x) can be multiplied by dx/h(y) and then integrated:
+∫dy/h(y) = ∫g(x)dx, providing a solution for y(x).
+
+Method 2:
+Equations in the form:
+P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0 or P2(x)·Q1(y)·dy + P1(x)·Q2(y)·dx = 0 can be divided by Q2(y)·P2(x) ≠ 0 and then integrated:
+∫P1(x)/P2(x)dx + ∫Q1(y)/Q2(y)dy = C
+Afterward, we find special solutions Q2(y)·P2(x) = 0 and verify whether they are included in the overall solution. If not, we delineate them as a separate solution.
+
+Note: The solution obtained for y by computing these integrals may be implicitly defined. Rearranging the solution may be necessary to obtain an explicit expression for y, although in some cases, expressing y explicitly may not be possible.
+>
+Differential equation: dy/dx = x**2/y**2
+Solution: 
+Step 1: Consider equation
+
+dy/dx = x**2/y**2
+
+Step 2: Multiply by dx/y**2 and then integrate
+∫(y**2 * dy) = ∫(x**2 * dx)
+
+Step 3: Reduce the result of integration to a more convenient form
+y**3/3 = (x**3)/3 + C  | * 3
+
+Step 4: Write final result
+y = (x**3 + C) ** 1/3
+```
+
+Example 5:
+```
+Methods: <Definition:
+A first-order differential equation is separable if it can be expressed in one of the following forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x) or P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0
+
+Solving Separable Equations:
+If a separable equation is expressed in the forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x), then we solve it using Method 1.
+If a separable equation is expressed in the form:
+P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0, then we solve it using Method 2.
+
+Method 1:
+Equations in the forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x) can be multiplied by dx/h(y) and then integrated:
+∫dy/h(y) = ∫g(x)dx, providing a solution for y(x).
+
+Method 2:
+Equations in the form:
+P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0 or P2(x)·Q1(y)·dy + P1(x)·Q2(y)·dx = 0 can be divided by Q2(y)·P2(x) ≠ 0 and then integrated:
+∫P1(x)/P2(x)dx + ∫Q1(y)/Q2(y)dy = C
+Afterward, we find special solutions Q2(y)·P2(x) = 0 and verify whether they are included in the overall solution. If not, we delineate them as a separate solution.
+
+Note: The solution obtained for y by computing these integrals may be implicitly defined. Rearranging the solution may be necessary to obtain an explicit expression for y, although in some cases, expressing y explicitly may not be possible.
+>
+Differential equation: y` = xy
+Solution: 
+Step 1: Consider equation
+
+y` = xy
+
+Step 2: Multiply by dx/y and then integrate
+∫(dy/y) = ∫(x * dx)
+
+Step 3: Write final result
+y = e**(1/2*x + C)
+```
+Example 6:
+```
+Methods: <Definition:
+A first-order differential equation is separable if it can be expressed in one of the following forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x) or P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0
+
+Solving Separable Equations:
+If a separable equation is expressed in the forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x), then we solve it using Method 1.
+If a separable equation is expressed in the form:
+P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0, then we solve it using Method 2.
+
+Method 1:
+Equations in the forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x) can be multiplied by dx/h(y) and then integrated:
+∫dy/h(y) = ∫g(x)dx, providing a solution for y(x).
+
+Method 2:
+Equations in the form:
+P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0 or P2(x)·Q1(y)·dy + P1(x)·Q2(y)·dx = 0 can be divided by Q2(y)·P2(x) ≠ 0 and then integrated:
+∫P1(x)/P2(x)dx + ∫Q1(y)/Q2(y)dy = C
+Afterward, we find special solutions Q2(y)·P2(x) = 0 and verify whether they are included in the overall solution. If not, we delineate them as a separate solution.
+
+Note: The solution obtained for y by computing these integrals may be implicitly defined. Rearranging the solution may be necessary to obtain an explicit expression for y, although in some cases, expressing y explicitly may not be possible.
+>
+Differential equation: dy/dx = (y**2 + 1)
+Solution: 
+Step 1: Consider equation
+
+dy/dx = (y**2 + 1)
+
+Step 2: Multiply by dx/(y**2 + 1) and then integrate
+∫(dy/(y**2 + 1)) = ∫(x**2 * dx)
+
+Step 3: Write final result
+y = tan(x + C)
+```
+Example 7:
+```
+Methods: <Definition:
+A first-order differential equation is separable if it can be expressed in one of the following forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x) or P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0
+
+Solving Separable Equations:
+If a separable equation is expressed in the forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x), then we solve it using Method 1.
+If a separable equation is expressed in the form:
+P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0, then we solve it using Method 2.
+
+Method 1:
+Equations in the forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x) can be multiplied by dx/h(y) and then integrated:
+∫dy/h(y) = ∫g(x)dx, providing a solution for y(x).
+
+Method 2:
+Equations in the form:
+P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0 or P2(x)·Q1(y)·dy + P1(x)·Q2(y)·dx = 0 can be divided by Q2(y)·P2(x) ≠ 0 and then integrated:
+∫P1(x)/P2(x)dx + ∫Q1(y)/Q2(y)dy = C
+Afterward, we find special solutions Q2(y)·P2(x) = 0 and verify whether they are included in the overall solution. If not, we delineate them as a separate solution.
+
+Note: The solution obtained for y by computing these integrals may be implicitly defined. Rearranging the solution may be necessary to obtain an explicit expression for y, although in some cases, expressing y explicitly may not be possible.
+>
+Differential equation: (y+xy)dx + (x-xy)dy = 0
+Solution: 
+Step 1: Consider equation
+
+(y+xy)dx + (x-xy)dy = 0
+
+Step 2: Bring the equation to the required form
+y(1+x)dx + x(1-y)dy = 0
+
+Step 3: Define the equation components:
+P1(x) = 1+x
+P2(x) = x
+Q1(y) = 1-y
+Q2(y) = y
+Step 4: Divide equation by xy != 0 and then integrated
+∫((1+x)/x)*dx + ∫((1-y)/y)*dy = C
+Step 5: Write final result
+y = ln|x| + ln|y| + x + C
+
+Step 6: Solve equation with condition xy=0
+```
+Example 8:
+```
+Methods: <Definition:
+A first-order differential equation is separable if it can be expressed in one of the following forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x) or P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0
+
+Solving Separable Equations:
+If a separable equation is expressed in the forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x), then we solve it using Method 1.
+If a separable equation is expressed in the form:
+P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0, then we solve it using Method 2.
+
+Method 1:
+Equations in the forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x) can be multiplied by dx/h(y) and then integrated:
+∫dy/h(y) = ∫g(x)dx, providing a solution for y(x).
+
+Method 2:
+Equations in the form:
+P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0 or P2(x)·Q1(y)·dy + P1(x)·Q2(y)·dx = 0 can be divided by Q2(y)·P2(x) ≠ 0 and then integrated:
+∫P1(x)/P2(x)dx + ∫Q1(y)/Q2(y)dy = C
+Afterward, we find special solutions Q2(y)·P2(x) = 0 and verify whether they are included in the overall solution. If not, we delineate them as a separate solution.
+
+Note: The solution obtained for y by computing these integrals may be implicitly defined. Rearranging the solution may be necessary to obtain an explicit expression for y, although in some cases, expressing y explicitly may not be possible.
+>
+Differential equation: (x**5)*dx - cosy*dy = 0
+Solution: 
+Step 1: Consider equation
+(x**5)*dx - cosy*dy = 0
+
+Step 2: Define the equation components
+P1(x) = x**5
+P2(x) = 1
+Q1(y) = -cosy
+Q2(y) = 1
+
+Step 3: Divide equation by 1 != 0 and then integrated
+∫(x**5)*dx - ∫cosy*dy = C
+
+Step 4: Write final result
+(x**6)/6 - siny = C
+```
+Example 9:
+```
+Methods: <Definition:
+A first-order differential equation is separable if it can be expressed in one of the following forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x) or P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0
+
+Solving Separable Equations:
+If a separable equation is expressed in the forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x), then we solve it using Method 1.
+If a separable equation is expressed in the form:
+P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0, then we solve it using Method 2.
+
+Method 1:
+Equations in the forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x) can be multiplied by dx/h(y) and then integrated:
+∫dy/h(y) = ∫g(x)dx, providing a solution for y(x).
+
+Method 2:
+Equations in the form:
+P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0 or P2(x)·Q1(y)·dy + P1(x)·Q2(y)·dx = 0 can be divided by Q2(y)·P2(x) ≠ 0 and then integrated:
+∫P1(x)/P2(x)dx + ∫Q1(y)/Q2(y)dy = C
+Afterward, we find special solutions Q2(y)·P2(x) = 0 and verify whether they are included in the overall solution. If not, we delineate them as a separate solution.
+
+Note: The solution obtained for y by computing these integrals may be implicitly defined. Rearranging the solution may be necessary to obtain an explicit expression for y, although in some cases, expressing y explicitly may not be possible.
+>
+Differential equation: (x**2+1)*y*dx + (x*y+x)dy = 0
+Solution: 
+Step 1: Consider equation
+(x**2+1)*y*dx + (x*y+x)dy = 0
+
+Step 2: Bring the equation to the required form
+((x**2)+1)*y*dx + x(y+1)dy = 0
+
+Step 3: Define the equation components
+P1(x) = (x**2)+1
+P2(x) = x
+Q1(y) = (y+1)
+Q2(y) = y
+
+Step 3: Divide equation by xy != 0 and then integrated
+∫(((x**2)+1)/x)*dx + ∫((y+1)/y)*dy = C
+
+Step 4: Write final result
+(x**2)/2 - ln|x| + y + ln|y| = C
+
+Step 5: Find solution with y=0
+```
+Methods: <{instructions}>\n
+Differential equation: '{equation}'\n
+Solution: "
+gpt_classification: "You are most powerful AI classifier. You are given text delimited by triple backticks that refers to the type of differential equation. Additionally, You are given differential equation from user.
+Your task is to check whether the equation corresponds to the type discussed in the text.
+If type of differential equation discussed in the text, simply write: T \n
+Otherwise, type of differential equation doesn`t discussed in the text, simply write: F \n
+Text: ```{text}```
+User differential equation: {equation}\n
+Output:"
+gpt_solve_checker: "You are most powerful AI solve checker of solutions of differential equations. You provided by text delimited by triple backticks that discus about methods of solving differential equations. Also, you provided differential equation by user. Additionally, you provided a user`s solution of differential equation delimited by angle backtics.
+Your task is to correct the errors in the equation and write the correct solution to the equation using the methods described in the text. Pay close attention to integration and sum and derivative and logarithm and subtraction and multiplication and division and exponential and exponentiation operations, check that they execute correctly. 
+Below is examples of solving differential equation corresponds to  your required response. Example is delimited by square backticks.
+
+Example 1:
+[
+Methods: ```Definition:
+A first-order differential equation is separable if it can be expressed in one of the following forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x) or P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0
+
+Solving Separable Equations:
+If a separable equation is expressed in the forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x), then we solve it using Method 1.
+If a separable equation is expressed in the form:
+P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0, then we solve it using Method 2.
+
+Method 1:
+Equations in the forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x) can be multiplied by dx/h(y) and then integrated:
+∫dy/h(y) = ∫g(x)dx, providing a solution for y(x).
+
+Method 2:
+Equations in the form:
+P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0 or P2(x)·Q1(y)·dy + P1(x)·Q2(y)·dx = 0 can be divided by Q2(y)·P2(x) ≠ 0 and then integrated:
+∫P1(x)/P2(x)dx + ∫Q1(y)/Q2(y)dy = C
+Afterward, we find special solutions Q2(y)·P2(x) = 0 and verify whether they are included in the overall solution. If not, we delineate them as a separate solution.
+
+Note: The solution obtained for y by computing these integrals may be implicitly defined. Rearranging the solution may be necessary to obtain an explicit expression for y, although in some cases, expressing y explicitly may not be possible.```
+
+User`s differential equation: dy/dx = (1+y^2)/(1+x^2)
+
+Unchecked solution: 
+<Step 1: Consider the equation dy/dx = (1+y^2)/(1+x^2)
+Step 2: Multiply by dx and (1+x^2) to separate variables: (1+y^2)dy = (1+x^2)dx
+Step 3: Integrate both sides: ∫(1+y^2)dy = ∫(1+x^2)dx
+Step 4: Integrate: y + (y^3)/3 = x + (x^3)/3 + C
+Step 5: Rearrange the equation to solve for y: y = (x + (x^3)/3 + C - (x^3)/3)>
+
+Correct solution:
+Step 1: Consider the equation dy/dx = (1+y^2)/(1+x^2)
+Step 2: Multiply by dx/(1+y^2) and then integrate ∫(dy/(1+y^2)) = ∫(dx/(1+x^2))
+Step 3: Integrate using the substitution y = tan(u) and x = tan(v) to simplify the integrals
+Step 4: Write the final result as y = tan(arctan(x) + C)
+]
+Example 2:
+[
+Methods: ```Definition:
+A first-order differential equation is separable if it can be expressed in one of the following forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x) or P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0
+
+Solving Separable Equations:
+If a separable equation is expressed in the forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x), then we solve it using Method 1.
+If a separable equation is expressed in the form:
+P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0, then we solve it using Method 2.
+
+Method 1:
+Equations in the forms:
+dy/dx = f(x, y) = g(x)h(y) or dy/dx = f(x, y) = h(y)g(x) can be multiplied by dx/h(y) and then integrated:
+∫dy/h(y) = ∫g(x)dx, providing a solution for y(x).
+
+Method 2:
+Equations in the form:
+P1(x)·Q2(y)·dx + P2(x)·Q1(y)·dy = 0 or P2(x)·Q1(y)·dy + P1(x)·Q2(y)·dx = 0 can be divided by Q2(y)·P2(x) ≠ 0 and then integrated:
+∫P1(x)/P2(x)dx + ∫Q1(y)/Q2(y)dy = C
+Afterward, we find special solutions Q2(y)·P2(x) = 0 and verify whether they are included in the overall solution. If not, we delineate them as a separate solution.
+
+Note: The solution obtained for y by computing these integrals may be implicitly defined. Rearranging the solution may be necessary to obtain an explicit expression for y, although in some cases, expressing y explicitly may not be possible.```
+
+User`s differential equation: dy/dx = (1+y^2)/(1+x^2)
+
+Unchecked solution: 
+<Correct solution:
+Step 1: Consider the equation dy/dx = (1+y^2)/(1+x^2)
+Step 2: Multiply by dx/(1+y^2) and then integrate ∫(dy/(1+y^2)) = ∫(dx/(1+x^2))
+Step 3: Integrate using the substitution y = tan(u) and x = tan(v) to simplify the integrals
+Step 4: Write the final result as y = tan(arctan(x) + C)>
+
+Correct solution:
+Step 1: Consider the equation dy/dx = (1+y^2)/(1+x^2)
+Step 2: Multiply by dx/(1+y^2) and then integrate ∫(dy/(1+y^2)) = ∫(dx/(1+x^2))
+Step 3: Integrate using the substitution y = tan(u) and x = tan(v) to simplify the integrals
+Step 4: Write the final result as y = tan(arctan(x) + C)
+]
+Methods: <{instructions}>
+User`s differential equation: {equation}
+Unchecked solution: {unchecked_solution}
+Correct solution:
+"
+gpt_code_solve: "Provide a step-by-step python code solution to the given differential equation using the method that described in text delimited by <>, please.\n  
+Pay attention to details in equation.\n 
+Differential equation delimited by ''.\n
+Text: <{instructions}>\n
+Differential equation: '{equation}'\n
+Answer:"
+classifier_gpt_model: "gpt-3.5-turbo"
+solver_gpt_model: "gpt-3.5-turbo"
+gpt_formatter_model: "gpt-3.5-turbo"
+gpt_code_solve_model: "gpt-3.5-turbo"
+gpt_solve_checker_model: "gpt-3.5-turbo"
+data_path: "../data"
+max_token_limit: 1
+classifier_temperature: 0
+solver_temperature: 0
+gpt_formatter_temperature: 0
+gpt_code_solve_temperature: 0
+gpt_solve_checker_temperature: 0.8
+host: '127.0.0.1'
+user: 'root'
+password: ''
+db_name: 'diplom'
+table_name: 'differential_equations'
